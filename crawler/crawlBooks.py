@@ -1,3 +1,4 @@
+''' crawls data from goodreads into json file format '''
 import requests 
 from bs4 import BeautifulSoup
 import json
@@ -64,7 +65,7 @@ def crawl_books(genres):
                         books_data.append({'id': book_id, 'title': title, 'authors': authors, 'description': desc, 'genres': genres, 'published': published, 'url': book_url})
 
                         cwd = os.getcwd()
-                        json_file_path = os.path.join(cwd, 'books_data.json')
+                        json_file_path = os.path.join(cwd, '../data/books_data.json')
                         with open(json_file_path, 'w') as json_file:
                             json.dump(books_data, json_file, indent=4)
 
